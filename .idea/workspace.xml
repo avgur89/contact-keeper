@@ -3,9 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ee9ae0b3-acbb-413e-8fa8-d6208fc99247" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/context/contact/contactState.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/context/contact/contactState.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,7 +33,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$USER_HOME$/.nvm/versions/node/v8.11.4/lib/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Stylus" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -63,7 +63,10 @@
       <workItem from="1572449127745" duration="313000" />
       <workItem from="1572513895851" duration="8079000" />
       <workItem from="1572866659821" duration="4764000" />
-      <workItem from="1572946443045" duration="7226000" />
+      <workItem from="1572946443045" duration="7406000" />
+      <workItem from="1572973438550" duration="3000" />
+      <workItem from="1573041604574" duration="18000" />
+      <workItem from="1573209597658" duration="4706000" />
     </task>
     <servers />
   </component>
