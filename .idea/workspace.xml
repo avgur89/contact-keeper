@@ -4,7 +4,9 @@
     <list default="true" id="ee9ae0b3-acbb-413e-8fa8-d6208fc99247" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/pages/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/contacts/ContactForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/contacts/ContactForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/components/contacts/ContactItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/contacts/ContactItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/context/contact/contactReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/context/contact/contactReducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/context/contact/contactState.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/context/contact/contactState.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,7 +35,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$USER_HOME$/.nvm/versions/node/v8.11.4/lib/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.JavaScript" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -66,7 +68,9 @@
       <workItem from="1572946443045" duration="7406000" />
       <workItem from="1572973438550" duration="3000" />
       <workItem from="1573041604574" duration="18000" />
-      <workItem from="1573209597658" duration="4706000" />
+      <workItem from="1573209597658" duration="4908000" />
+      <workItem from="1573885108235" duration="181000" />
+      <workItem from="1573885305648" duration="3954000" />
     </task>
     <servers />
   </component>
