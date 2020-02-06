@@ -21,7 +21,7 @@ app.use('/api/contacts', contacts);
 app.use('/api/auth', auth);
 
 app.get('/', (req, res) => {
-    res.json({ msg: 'Welcome to the ContactKeeper API' });
+  res.json({ msg: 'Welcome to the ContactKeeper API' });
 });
 
 app.listen(PORT, () => console.log(`Server is starting on port ${PORT}`));

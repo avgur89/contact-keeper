@@ -1,8 +1,39 @@
 import * as types from '../types';
 
 export default (state, action) => {
-    switch (action.type) {
-        default:
-            return state
-    }
-}
+  switch (action.type) {
+    case types.USER_LOADED:
+      return {
+        ...state,
+        isAuthenticated: true,
+        isLoading: false,
+        user: action.payload
+      };
+    case types.REGISTER_SUCCESS:
+      localStorage.setItem('token', action.payload.token);
+      return {
+        ...state,
+        ...action.payload,
+        isAuthenticated: true,
+        isLoading: false
+      };
+    case types.REGISTER_FAILURE:
+    case types.AUTH_ERROR:
+      localStorage.removeItem('token');
+      return {
+        ...state,
+        token: null,
+        isAuthenticated: false,
+        isLoading: false,
+        user: null,
+        error: action.payload
+      };
+    case types.CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null
+      };
+    default:
+      return state;
+  }
+};
