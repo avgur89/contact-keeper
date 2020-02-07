@@ -3,6 +3,15 @@ import AlertContext from '../../context/alert/alertContext';
 import AuthContext from '../../context/auth/authContext';
 
 const Register = props => {
+  const [user, setUser] = useState({
+    name: '',
+    email: '',
+    password: '',
+    confirmPassword: ''
+  });
+
+  const { name, email, password, confirmPassword } = user;
+
   const alertContext = useContext(AlertContext);
   const authContext = useContext(AuthContext);
 
@@ -20,15 +29,6 @@ const Register = props => {
     }
     // eslint-disable-next-line
   }, [error, isAuthenticated, props.history]);
-
-  const [user, setUser] = useState({
-    name: '',
-    email: '',
-    password: '',
-    confirmPassword: ''
-  });
-
-  const { name, email, password, confirmPassword } = user;
 
   const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
 

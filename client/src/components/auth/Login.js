@@ -3,6 +3,13 @@ import AuthContext from '../../context/auth/authContext';
 import AlertContext from '../../context/alert/alertContext';
 
 const Login = props => {
+  const [user, setUser] = useState({
+    email: '',
+    password: ''
+  });
+
+  const { email, password } = user;
+
   const authContext = useContext(AuthContext);
   const alertContext = useContext(AlertContext);
 
@@ -21,17 +28,10 @@ const Login = props => {
     // eslint-disable-next-line
   }, [error, isAuthenticated, props.history]);
 
-  const [user, setUser] = useState({
-    email: '',
-    password: ''
-  });
-
-  const { email, password } = user;
-
   const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
 
   const onSubmit = e => {
-    e.preveventDefault();
+    e.preventDefault();
 
     if (email === '' || password === '') {
       setAlert('Please fill in all fields', 'danger');
