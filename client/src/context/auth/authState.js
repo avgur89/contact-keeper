@@ -55,7 +55,32 @@ const AuthState = props => {
       });
     }
   };
+
   // Login User
+  const login = async formData => {
+    const config = {
+      heaedrs: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    try {
+      const res = await axios.post('/api/auth', formData, config);
+
+      dispatch({
+        type: types.LOGIN_SUCCESS,
+        payload: res.data
+      });
+
+      loadUser();
+    } catch (err) {
+      dispatch({
+        type: types.LOGIN_FAILURE,
+        payload: err.response.data.msg
+      });
+    }
+  };
+
   // Logout
   // Clear Errors
   const clearErrors = () => dispatch({ type: types.CLEAR_ERRORS });
@@ -70,6 +95,7 @@ const AuthState = props => {
         error: state.error,
         loadUser,
         register,
+        login,
         clearErrors
       }}
     >
