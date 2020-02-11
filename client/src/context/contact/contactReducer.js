@@ -2,24 +2,33 @@ import * as types from '../types';
 
 export default (state, action) => {
   switch (action.type) {
+    case types.GET_CONTACTS:
+      return {
+        ...state,
+        contacts: action.payload,
+        isLoading: false
+      };
     case types.ADD_CONTACT:
       return {
         ...state,
-        contacts: [...state.contacts, action.payload]
+        contacts: [...state.contacts, action.payload],
+        isLoading: false
       };
     case types.DELETE_CONTACT:
       return {
         ...state,
         contacts: state.contacts.filter(
           contact => contact.id !== action.payload
-        )
+        ),
+        isLoading: false
       };
     case types.UPDATE_CONTACT:
       return {
         ...state,
         contacts: state.contacts.map(contact => {
           return contact.id === action.payload.id ? action.payload : contact;
-        })
+        }),
+        isLoading: false
       };
     case types.SET_CURRENT:
       return {
@@ -43,6 +52,11 @@ export default (state, action) => {
       return {
         ...state,
         filtered: null
+      };
+    case types.CONTACT_ERROR:
+      return {
+        ...state,
+        error: action.payload
       };
     default:
       return state;

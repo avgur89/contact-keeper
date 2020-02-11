@@ -1,44 +1,45 @@
 import React, { useReducer } from 'react';
-import uuid from 'uuid';
+import axios from 'axios';
 import ContactContext from './contactContext';
 import contactReducer from './contactReducer';
 import * as types from '../types';
 
 const ContactState = props => {
   const initialState = {
-    contacts: [
-      {
-        id: 1,
-        name: 'Jill Johnson',
-        email: 'jill@gmail.com',
-        phone: '123-123-123',
-        type: 'personal'
-      },
-      {
-        id: 2,
-        name: 'Ben Howard',
-        email: 'benh@gmail.com',
-        phone: '324-323-865',
-        type: 'personal'
-      },
-      {
-        id: 3,
-        name: 'Jack Michael',
-        email: 'jmich@gmail.com',
-        phone: '145-873-193',
-        type: 'professional'
-      }
-    ],
+    contacts: [],
     current: null,
-    filtered: null
+    filtered: null,
+    error: null
   };
 
   const [state, dispatch] = useReducer(contactReducer, initialState);
 
+  // Get Contacts
+  const getContacts = async () => {
+    try {
+      const res = await axios.get('/api/contacts');
+
+      dispatch({ type: types.GET_CONTACTS, payload: res.data });
+    } catch (err) {
+      dispatch({ type: types.CONTACT_ERROR, payload: err.response.msg });
+    }
+  };
+
   // Add Contact
-  const addContact = contact => {
-    contact.id = uuid.v4();
-    dispatch({ type: types.ADD_CONTACT, payload: contact });
+  const addContact = async contact => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    try {
+      const res = await axios.post('/api/contacts', contact, config);
+
+      dispatch({ type: types.ADD_CONTACT, payload: res.data });
+    } catch (err) {
+      dispatch({ type: types.CONTACT_ERROR, payload: err.response.msg });
+    }
   };
 
   // Delete Contact
@@ -77,6 +78,8 @@ const ContactState = props => {
         contacts: state.contacts,
         current: state.current,
         filtered: state.filtered,
+        error: state.error,
+        getContacts,
         addContact,
         deleteContact,
         updateContact,
