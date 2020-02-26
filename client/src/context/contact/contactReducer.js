@@ -11,22 +11,30 @@ export default (state, action) => {
     case types.ADD_CONTACT:
       return {
         ...state,
-        contacts: [...state.contacts, action.payload],
+        contacts: [action.payload, ...state.contacts],
         isLoading: false
       };
     case types.DELETE_CONTACT:
       return {
         ...state,
         contacts: state.contacts.filter(
-          contact => contact.id !== action.payload
+          contact => contact._id !== action.payload
         ),
         isLoading: false
+      };
+    case types.CLEAR_CONTACTS:
+      return {
+        ...state,
+        contacts: null,
+        current: null,
+        filtered: null,
+        error: null
       };
     case types.UPDATE_CONTACT:
       return {
         ...state,
         contacts: state.contacts.map(contact => {
-          return contact.id === action.payload.id ? action.payload : contact;
+          return contact._id === action.payload._id ? action.payload : contact;
         }),
         isLoading: false
       };
@@ -40,7 +48,7 @@ export default (state, action) => {
         ...state,
         current: null
       };
-    case types.FILTER_CONTACT:
+    case types.FILTER_CONTACTS:
       return {
         ...state,
         filtered: state.contacts.filter(contact => {
